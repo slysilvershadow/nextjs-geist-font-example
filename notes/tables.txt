@@ -1,0 +1,381 @@
+# Build a fully modular procedural simulation in Python that:
+# ✅ Procedurally generates a world using layered environmental, geographic, and societal systems.
+# ✅ Includes modular sprite-based visual rendering of agents, creatures, terrain, and features.
+# ✅ Uses Python classes, YAML configuration files, and Enum-controlled vocabularies.
+# ✅ Follows a step-by-step world-generation pipeline using provided function names.
+
+# 🔧 Technologies to use:
+# - Python
+# - numpy for grid math
+# - PIL and Pygame possibly matplotlib for rendering 2D visual output
+# - pyyaml for YAML data input
+# - enum for structured types
+
+# 🔨 Implement the following world generation functions in sequence:
+def seed()
+def arrays()
+def mantle()
+def plates()
+def vectors()
+def motion()
+def interact()
+def subduction()
+def uplift()
+def elevation()
+def ice()
+def melt()
+def isostasy()
+def volcano()
+def seafloor()
+def wind()
+def moisture()
+def rivers()
+def erosion()
+def soil()
+def biome()
+def resources()
+def life()
+def climate()
+def weather()
+def features()
+def build()
+# Each function should be modular and build on the output of the previous one, culminating in a finalized world state.
+
+# 🧱 Create classes for all the following simulation entities. Each class must:
+# - Define a *_properties dictionary
+# - Accept YAML input to initialize state
+# - Use Enums for strict attributes (e.g. diet, climate type, stat names)
+
+# --- Entities & Components ---
+class Agent
+class Creature
+class Plant
+class Mineral
+class Water
+class Resource
+class DNA
+class Body
+class Brain
+class Memory
+class Emotion
+class Need
+class Trait
+class Stat
+class Skill
+class State
+class Action
+class Event
+class Task
+class Goal
+class Personality
+class Decision
+class Dialogue
+class Reputation
+class Relationship
+class Household
+class Settlement
+class Inventory
+class Item
+class Recipe
+class Food
+class Drink
+class Tool
+class Weapon
+class Armor
+class Material
+class Currency
+class Trade
+class Job
+class Spell
+class Affinity
+class Ritual
+class Leyline
+class Disease
+class Addiction
+class Mount
+class Festival
+
+# --- World & Environment ---
+class World
+class Tile
+class Terrain
+class Biome
+class Map
+class Faction
+class Beliefs
+class Culture
+class Climate
+class Ecosystem
+class Disaster
+
+# --- Simulation Timing ---
+class Clock
+class Scheduler
+class Tick
+class Time
+class Day
+class Month
+class Season
+class Year
+class Weather
+class Line_of_Sight
+class Hearing_Range
+class Log
+class Notification
+class Building
+class Furniture
+class Workbench
+
+# 🖼️ Graphics Requirements:
+# - Procedurally generate tilemap-style terrain with elevation, moisture, biome, and river overlays.
+# - Render the map to an image grid with labeled or color-coded tile types.
+# - Each creature must have a modular sprite composed of parts (head, body, limbs, accessories).
+# - Attach creature sprite parts to a skeleton rig for idle/animated poses (basic 2D bone system).
+# - Display creature sprites on their tile location.
+# - Include a legend and/or map key for biome, elevation, water, and creature locations.
+# - Output the world map as a PNG or interactive visual window.
+
+# 🧠 Additional:
+# - Use Enums to lock properties like `Mood`, `Diet`, `BiomeType`, `SkillType`, 'Polarity', etc.
+# - Include a `build()` function that calls all generation steps and then renders the final simulation.
+# - Support saving and reloading world state via YAML or JSON.
+
+# 🔁 Goal:
+# - Fully working simulation that loads data from YAML, builds the world step-by-step, populates it with life, and renders it visually with procedurally assembled graphics.
+
+
+# Tables
+
+## Resources
+
+| **#** | **Category**      | **Use Case / Notes**                                          |
+|-------|-------------------|---------------------------------------------------------------|
+| 01    | Tree              | Wood, fuel, tools, structures, sap                            |
+| 02    | Bush              | Berries, small game shelter, thorns, herbal use               |
+| 03    | Flower            | Aesthetics, alchemy, decoration, rituals                      |
+| 04    | Stone             | Building, tools, weapon heads, terrain shaping                |
+| 05    | Gemstone          | Rare crafting, enchantments, jewelry, magic channels          |
+| 06    | Metal             | Armor, weapons, tools, currency                               |
+| 07    | Mineral Deposit   | Salt, sulfur, chalk, crystals, non-metal industrial uses      |
+| 08    | Fruit             | Food, seeds, trade, brewing                                   |
+| 09    | Vegetable         | Sustenance, farming, medicine                                 |
+| 10    | Fungus            | Poison, food, glow, unique spore mechanics                    |
+| 11    | Herb              | Potions, medicine, magic, seasoning                           |
+| 12    | Resin/Sap         | Glue, firestarter, incense, medicine                          |
+| 13    | Insect/Creature   | Protein, exotic uses, bait, reagents                          |
+| 14    | Water Source      | Drinking, irrigation, purification, ecosystem core            |
+| 15    | Clay/Soil Type    | Pottery, building, pigments, agriculture                      |
+| 16    | Fiber Source      | Cloth, rope, nets, weaving, string instruments                |
+| 17    | Fuel Source       | Heat, blacksmithing, cooking, signaling                       |
+| 18    | Wax               | Candles, sealants, waterproofing, magical inscribing          |
+| 19    | Shell             | Jewelry, tools, charms, lime for soil and mortar              |
+| 20    | Coral             | Magical reagent, decoration, lime source, marine health       |
+| 21    | Bone              | Tools, weapons, rituals, fertilizer, carving                  |
+| 22    | Feather           | Arrows, fletching, pillows, ceremonial wear, quills           |
+| 23    | Hide/Leather      | Clothing, armor, tents, bags, containers                      |
+| 24    | Scale/Carapace    | Armor, tools, rare materials, trophies                        |
+| 25    | Mud/Peat          | Insulation, low-tech bricks, fertilizer, fuel                 |
+| 26    | Ice/Permafrost    | Cooling, preservation, rare flora/fungi, barriers             |
+|-------|-------------------|---------------------------------------------------------------|
+
+## Biomes
+
+| **#**  | **Biome**        | **Temp (°C)**     | **Latitude (°)**  | **Moisture (%)**  | **Elevation (m)** |
+|--------|------------------|-------------------|-------------------|-------------------|-------------------|
+| 01     | Boreal Forest    | -10 to 15         | 50 to 70          | 0.40 to 0.60      | 200 to 1500       |
+| 02     | Deciduous Forest |  00 to 25         | 30 to 60          | 0.50 to 0.80      | 000 to 1200       |
+| 03     | Rainforest       |  24 to 30         | 00 to 15          | 0.80 to 1.00      | 000 to 1000       |
+| 04     | Tundra           | -30 to 05         | 60 to 80          | 0.20 to 0.50      | 000 to 1000       |
+| 05     | Steppe           | -05 to 25         | 40 to 60          | 0.20 to 0.40      | 200 to 1500       |
+| 06     | Savanna          |  20 to 30         | 10 to 20          | 0.30 to 0.60      | 000 to 1200       |
+| 07     | Polar Desert     | -50 to 00         | 70 to 90          | 0.00 to 0.20      | 000 to 3000       |
+| 08     | Semi-Arid Desert | -05 to 20         | 30 to 50          | 0.10 to 0.30      | 500 to 2000       |
+| 09     | Sand Desert      |  20 to 45         | 15 to 30          | 0.00 to 0.15      | 000 to 1000       |
+| 10     | Heath            |  05 to 20         | 45 to 60          | 0.40 to 0.70      | 100 to 1000       |
+| 11     | Chaparral        |  10 to 30         | 30 to 40          | 0.30 to 0.50      | 100 to 1200       |
+| 12     | Swamp            |  05 to 30         | 00 to 50          | 0.70 to 1.00      | 000 to 0200       |
+|--------|------------------|-------------------|-------------------|-------------------|-------------------|
+
+## Needs
+
+| Need        | Min  | Max  | Decay  | Priority | Tag(s)           | Notes                                                  |
+| ----------- | ---- | ---- | ------ | -------- | ---------------- | ------------------------------------------------------ |
+| Health      | 0    | 100  | varies | 1        | Physical         | Damaged by injuries, illness, starvation               |
+| Thirst      | 0    | 100  | 0.1    | 2        | Physical         | Fastest decay; critical for survival                   |
+| Hunger      | 0    | 100  | 0.05   | 3        | Physical         | Drops steadily; affects health and mood                |
+| Temperature | -100 | 100  | varies | 4        | Physical, Enviro | Affects health, energy; varies by clothing/environment |
+| Pain        | 0    | 100  | varies | 5        | Physical         | Increases with injury; limits effectiveness            |
+| Energy      | 0    | 100  | 0.04   | 6        | Physical         | Regained via sleep or rest                             |
+| Stress      | -100 | 100  | 0.02   | 7        | Mental           | Accumulates under pressure; reduces focus, health      |
+| Sanity      | -100 | 100  | 0.01   | 8        | Mental           | Affected by trauma, solitude, magical flux             |
+| Bladder     | 0    | 100  | 0.06   | 9        | Physical         | Increases steadily; needs relief                       |
+| Hygiene     | -100 | 100  | 0.03   | 10       | Physical, Social | Affects social interaction, morale                     |
+| Morale      | -100 | 100  | 0.01   | 11       | Mental           | Driven by success/failure and environment              |
+| Motivation  | -100 | 100  | 0.02   | 12       | Mental           | Impacts skill growth, energy use                       |
+| Focus       | 0    | 100  | 0.03   | 13       | Mental           | Reduced by stress, increased by quiet                  |
+| Mana        | 0    | 100  | 0.05   | 14       | Magical          | Consumed by spells; recharges passively or via rest    |
+| Social      | -100 | 100  | 0.02   | 15       | Social, Mental   | Influences morale, stress                              |
+| Enjoyment   | -100 | 100  | 0.02   | 16       | Mental, Social   | Low enjoyment affects morale over time                 |
+| ----------- | ---- | ---- | ------ | -------- | ---------------- | ------------------------------------------------------ |
+
+## Stats
+
+| Stat           | Decay Impact (if any)                        | Regeneration / Maintenance                | Modifiers & Conditions                              | Interdependencies                           |
+| -------------- | -------------------------------------------- | ----------------------------------------- | --------------------------------------------------- | ------------------------------------------- |
+|   Stamina      | Gradual drain from physical activity         | Rest, food, hydration, high morale        | Fatigue from overuse, boosted by nutrition          | Affects Strength, Dexterity, Willpower      |
+|   Strength     | Long-term decay from malnutrition, injury    | Strength training, protein-rich diet      | Injuries/illness lower usable strength              | Boosts carry capacity, attack damage        |
+|   Dexterity    | Declines from aging, injury, illness         | Fine-motor tasks, manual practice         | Cold, stress, and fatigue reduce dexterity          | Affects precision, crafting, evasion        |
+|   Perception   | Stress, blindness, confusion reduce function | Rest, mental focus, calm environment      | Environmental effects (fog, night), fatigue dampens | Enhances foraging, tracking, vigilance      |
+|   Willpower    | Wears down from trauma, despair, burnout     | Meditation, therapy, success feedback     | Boosted by rituals, strong morale, clear purpose    | Shields against stress/sanity decay         |
+|   Charisma     | Lowered by poor hygiene, illness, trauma     | Self-care, social victories, empathy work | Boosted by good looks, status, confidence           | Influences Social and Persuasion outcomes   |
+|   Sanity       | Drops from solitude, horror, flux exposure   | Companionship, safe places, hobbies       | Heavily affected by magic zones, stress, fear       | Critical for avoiding breakdowns, madness   |
+|   Focus        | Fractures under stress, noise, interruptions | Quiet time, discipline training           | Multitasking and chaos reduce this stat             | Essential for magic, crafting, perception   |
+|   Morale       | Dips with failure, loss, harsh conditions    | Success, positive social feedback         | Environments (beauty/ruins), victories boost morale | Helps maintain motivation, energy, recovery |
+|   Motivation   | Drains from monotony, failure, bad morale    | Inspiration, rest, rewards                | Influenced by leadership, goal clarity              | Powers skill gain, speed, willingness       |
+|   Vigilance    | Constant drain in tense areas, low sleep     | Awareness drills, caffeine, sleep         | Night, fatigue, distractions lower vigilance        | Ties into perception, defense, scouting     |
+|   Intuition    | Dulled by overplanning, anxiety, magic flux  | Free play, creativity, meditation         | Magical areas, artistic tasks improve intuition     | Helps detect lies, dangers, opportunities   |
+|   Resilience   | Degrades from stress and injury              | Hardship exposure, healing, will training | Strengthens after surviving trauma                  | Buffers other stats from collapse           |
+| -------------- | -------------------------------------------- | ----------------------------------------- | --------------------------------------------------- | ------------------------------------------- |
+
+## Skills
+
+| Skill                 | Primary Stat Impacted | Decay Rate | Min | Max | Category        | XP Thresholds (Novice → Master) | Notes                                                    |
+| --------------------- | --------------------- | ---------- | --- | --- | --------------- | ------------------------------- | -------------------------------------------------------- |
+| **Farming**           | Stamina               | 0.03       | 0   | 100 | Resource        | 0 → 25 → 50 → 75 → 100          | Improves over seasons; synergy with Cooking and Foraging |
+| **Fishing**           | Dexterity             | 0.02       | 0   | 100 | Resource        | 0 → 20 → 40 → 70 → 100          | Boosted by Perception, weather affects success rate      |
+| **Mining**            | Strength              | 0.04       | 0   | 100 | Resource        | 0 → 30 → 60 → 85 → 100          | Tied to Earthwork and Smithing                           |
+| **Logging**           | Strength              | 0.04       | 0   | 100 | Resource        | 0 → 30 → 60 → 85 → 100          | Affects availability of wood resources                   |
+| **Foraging**          | Perception            | 0.02       | 0   | 100 | Resource        | 0 → 20 → 45 → 70 → 100          | Boosts cooking ingredients, herbal discovery             |
+| **Combat**            | Strength              | 0.05       | 0   | 100 | Combat          | 0 → 35 → 65 → 90 → 100          | Involves subskills like Melee, Ranged, Defense           |
+| **Smithing**          | Strength              | 0.03       | 0   | 100 | Crafting        | 0 → 25 → 55 → 80 → 100          | Synergizes with Crafting, Tailoring                      |
+| **Cooking**           | Dexterity             | 0.02       | 0   | 100 | Crafting        | 0 → 20 → 50 → 75 → 100          | Quality increases with ingredient variety                |
+| **Healing**           | Willpower             | 0.02       | 0   | 100 | Support         | 0 → 25 → 50 → 75 → 100          | Magic or medicine-based healing                          |
+| **Carpentry**         | Strength              | 0.03       | 0   | 100 | Construction    | 0 → 30 → 60 → 85 → 100          | Core to shelter and crafting infrastructure              |
+| **Taming**            | Dexterity             | 0.02       | 0   | 100 | Animal Handling | 0 → 25 → 55 → 80 → 100          | Depends on animal personality and empathy                |
+| **Tracking**          | Perception            | 0.02       | 0   | 100 | Exploration     | 0 → 20 → 50 → 75 → 100          | Used with hunting, enemy detection                       |
+| **Tailoring**         | Dexterity             | 0.02       | 0   | 100 | Crafting        | 0 → 20 → 50 → 75 → 100          | Requires fabrics and dyes, boosts Charisma               |
+| **Crafting**          | Dexterity             | 0.03       | 0   | 100 | Crafting        | 0 → 25 → 55 → 80 → 100          | General item creation skill                              |
+| **Engineering**       | Dexterity             | 0.03       | 0   | 100 | Construction    | 0 → 25 → 60 → 85 → 100          | Includes trap and machine building                       |
+| **Spellcraft**        | Focus                 | 0.04       | 0   | 100 | Magic           | 0 → 30 → 60 → 90 → 100          | Related to magic casting, range, and effect              |
+| **Alchemy**           | Willpower             | 0.03       | 0   | 100 | Magic           | 0 → 25 → 55 → 85 → 100          | Complex potions and magical reagents                     |
+| **Navigation**        | Perception            | 0.02       | 0   | 100 | Exploration     | 0 → 20 → 50 → 75 → 100          | Helps pathfinding, exploring unknown terrain             |
+| **Negotiation**       | Charisma              | 0.02       | 0   | 100 | Social          | 0 → 20 → 50 → 75 → 100          | Trade and peacebuilding                                  |
+| **Leadership**        | Charisma              | 0.01       | 0   | 100 | Social          | 0 → 20 → 50 → 70 → 100          | Affects morale and group cohesion                        |
+| **Deception**         | Charisma              | 0.02       | 0   | 100 | Social          | 0 → 20 → 50 → 75 → 100          | Used in lying, infiltration                              |
+| **Bartering**         | Charisma              | 0.02       | 0   | 100 | Social          | 0 → 20 → 50 → 75 → 100          | Affects trade prices                                     |
+| **Observation**       | Perception            | 0.01       | 0   | 100 | Exploration     | 0 → 15 → 40 → 70 → 100          | Increases awareness radius                               |
+| **Design**            | Dexterity             | 0.02       | 0   | 100 | Crafting        | 0 → 20 → 50 → 75 → 100          | Needed for architecture, tailoring, gear aesthetics      |
+| **Tactics**           | Focus                 | 0.03       | 0   | 100 | Combat          | 0 → 25 → 55 → 85 → 100          | Turn-based combat efficiency                             |
+| **Stealth**           | Dexterity             | 0.02       | 0   | 100 | Combat          | 0 → 20 → 50 → 75 → 100          | Movement and distraction-based actions                   |
+| **Performance**       | Charisma              | 0.02       | 0   | 100 | Social          | 0 → 20 → 50 → 75 → 100          | Social influence and distraction                         |
+| **Communication**     | Charisma              | 0.01       | 0   | 100 | Social          | 0 → 15 → 40 → 70 → 100          | Coordinates with allies and NPCs                         |
+| **Earthwork**         | Strength              | 0.03       | 0   | 100 | Construction    | 0 → 25 → 55 → 85 → 100          | Terrain shaping and building support                     |
+| **Masonry**           | Strength              | 0.03       | 0   | 100 | Construction    | 0 → 25 → 55 → 85 → 100          | High endurance requirement                               |
+| **Architecture**      | Focus                 | 0.02       | 0   | 100 | Construction    | 0 → 25 → 55 → 85 → 100          | Required for advanced construction planning              |
+| **Accounting**        | Willpower             | 0.01       | 0   | 100 | Management      | 0 → 20 → 50 → 75 → 100          | Managing resources and trade routes                      |
+| **First Aid**         | Willpower             | 0.02       | 0   | 100 | Support         | 0 → 20 → 50 → 75 → 100          | Emergency health recovery                                |
+| **Spiritual Healing** | Willpower             | 0.02       | 0   | 100 | Support         | 0 → 20 → 50 → 75 → 100          | Replenishes mental and magical well-being                |
+| --------------------- | --------------------- | ---------- | --- | --- | --------------- | ------------------------------- | -------------------------------------------------------- |
+
+## Actions
+
+| Category     | Movement/Action | Description                                | Stat Weights                          | Skills                                      |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Movement     | Walk            | Move to a nearby tile                      | Sta(0.67), Str(0.33)                  | -                                           |
+| Movement     | Run             | Move quickly over longer distances         | Sta(0.5), Str(0.33), Dex(0.17)        | -                                           |
+| Movement     | Jump            | Traverse gaps or obstacles                 | Str(0.5), Dex(0.33), Sta(0.17)        | -                                           |
+| Movement     | Climb           | Ascend or descend elevated terrain         | Str(0.43), Dex(0.29), Sta(0.29)       | -                                           |
+| Movement     | Crouch          | Move stealthily or enter tight spaces      | Dex(0.75), Sta(0.25)                  | Stealth                                     |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Interaction  | Inspect         | Examine terrain, objects, creatures        | Per(0.6), Focus(0.4)                  | Observation, Tracking                       |
+| Interaction  | Pick Up         | Collect or take an item                    | Str(0.67), Dex(0.33)                  | -                                           |
+| Interaction  | Use             | Interact with tools, levers, doors         | Dex(0.67), Per(0.33)                  | Crafting, Engineering                       |
+| Interaction  | Speak           | Initiate dialogue with NPCs                | Charisma(0.75), Will(0.25)            | Communication, Negotiation                  |
+| Interaction  | Trade           | Exchange goods with NPCs                   | Charisma(0.6), Per(0.4)               | Bartering, Negotiation                      |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Combat       | Attack          | Perform melee or ranged offensive move     | Str(0.5), Dex(0.33), Sta(0.17)        | Combat, Tactics                             |
+| Combat       | Defend          | Block or reduce incoming damage            | Str(0.4), Dex(0.4), Will(0.2)         | Combat, Tactics                             |
+| Combat       | Dodge           | Evade an incoming attack                   | Dex(0.5), Per(0.33), Sta(0.17)        | Combat, Stealth                             |
+| Combat       | Special Ability | Use a unique power, spell, or technique    | Focus(0.43), Will(0.29), Mana(0.29)   | Spellcraft, Combat                          |
+| Combat       | Equip/Swap      | Change weapons or tools during encounter   | Dex(0.67), Sta(0.33)                  | Combat                                      |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Utility      | Craft           | Create items from materials                | Dex(0.5), Focus(0.33), Str(0.17)      | Crafting, Smithing, Tailoring               |
+| Utility      | Heal            | Restore health using medicine or magic     | Will(0.5), Focus(0.33), Dex(0.17)     | Healing, First Aid,                         |
+| Utility      | Rest            | Recover stamina and health in safe areas   | Will(0.67), Sta(0.33)                 |                                             |
+| Utility      | Signal          | Call allies or mark a location             | Charisma(0.67), Per(0.33)             | Communication                               |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Social       | Befriend        | Build rapport and alliances                | Charisma(0.5), Will(0.33), Per(0.17)  | Communication, Leadership                   |
+| Social       | Intimidate      | Influence others through fear or dominance | Str(0.33), Charisma(0.33), Will(0.33) | Leadership, Combat                          |
+| Social       | Persuade        | Convince someone to act or agree           | Charisma(0.5), Will(0.33), Per(0.17)  | Negotiation, Communication                  |
+| Social       | Lie             | Deceive someone to manipulate a situation  | Charisma(0.5), Focus(0.33), Per(0.17) | Deception, Performance                      |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Tactical     | Wait            | Delay action until strategic moment        | Will(2.0), Focus(2.0)                 | Tactics                                     |
+| Tactical     | Scout           | Survey surroundings for planning           | Per(3.0), Dex(2.0), Focus(1.0)        | Observation, Tracking, Navigation           |
+| Tactical     | Prepare         | Ready a weapon, item, or stance            | Dex(2), Focus(2), Will(1)             | Combat, Tactics                             |
+| Tactical     | Distract        | Divert enemy attention or confuse others   | Charisma(2), Dex(2), Focus(1)         | Performance, Stealth, Deception             |
+| Tactical     | Camouflage      | Blend in to avoid detection                | Dex(3), Per(2), Focus(1)              | Stealth, Observation                        |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Construction | Build           | Construct structures using materials       | Str(3), Dex(2), Focus(2)              | Carpentry, Masonry, Architecture            |
+| Construction | Repair          | Fix damaged structures or equipment        | Str(2), Dex(3), Focus(1)              | Carpentry, Smithing, Engineering            |
+| Construction | Survey          | Plan layouts and improvements              | Per(3), Focus(3), Will(1)             | Architecture, Engineering                   |
+| Construction | Excavate        | Dig terrain or tunnels                     | Str(3), Sta(3), Dex(1)                | Earthwork, Mining                           |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+| Resource     | Plant           | Grow crops, trees, or herbs                | Dex(2), Per(2), Sta(1)                | Farming, Foraging                           |
+| Resource     | Harvest         | Collect crops or plants                    | Dex(2), Sta(2), Per(1)                | Farming, Foraging                           |
+| Resource     | Tame            | Train and domesticate animals              | Charisma(2), Will(2), Per(2)          | Taming, Communication                       |
+| Resource     | Hunt            | Track and kill wild animals                | Per(3), Dex(2), Str(2)                | Tracking, Combat, Stealth                   |
+| Resource     | Fish            | Catch aquatic resources                    | Dex(3), Per(2), Sta(1)                | Fishing                                     |
+| Resource     | Mine            | Extract minerals or stone                  | Str(3), Sta(3), Dex(1)                | Mining, Earthwork                           |
+| Resource     | Chop            | Cut down trees                             | Str(3), Sta(2), Dex(1)                | Logging                                     |
+| ------------ | --------------- | ------------------------------------------ | ------------------------------------- | ------------------------------------------- |
+
+## Crafting Stations
+
+| Station        | Stats                 | Skills Used         | Products                        |
+|----------------|-----------------------|---------------------|---------------------------------|
+| Anvil          | Strength, Stamina     | Smithing, Tactics   | Weapons, Armor                  |
+| Loom           | Dexterity, Focus      | Tailoring           | Textiles, Cloth, Clothing       |
+| Altar          | Willpower, Focus      | Spellcraft, Alchemy | Magical Items, Potions          |
+| Kiln/Furnace   | Strength, Stamina     | Crafting, Smithing  | Ingots, Bricks, Glass           |
+| Mortar & Pestle| Dexterity, Willpower  | Alchemy, Healing    | Powders, Tinctures, Potions     |
+| Crafting Table | Dexterity, Focus      | Carpentry, Crafting | General Goods, Tools, Containers|
+|----------------|-----------------------|---------------------|---------------------------------
+
+| **Age**          | **New Domain Introduced** | **Evolving Domain (From → To)** | **Current Domains**                                   |
+| ---------------- | ------------------------- | ------------------------------- | ----------------------------------------------------- |
+| **Origin**       | Temperament               | None                            | Temperament                                           |
+| **Neophyte**     | Socialization             | None                            | Temperament, Socialization                            |
+| **Trainee**      | Cognition                 | Temperament → Emotional         | Socialization, Emotional, Cognition                   |
+| **Initiate**     | Identity                  | Socialization → Interaction     | Emotional, Cognition, Interaction, Identity           |
+| **Novice**       | Morals                    | Cognition → Ambition            | Emotional, Interaction, Identity, Morals, Ambition    |
+| **Practitioner** | —                         | Identity → Perspective          | Emotional, Interaction, Inspiration, Morals, Ambition |
+| **Adept**        | —                         | Morals → Ethics                 | Emotional, Interaction, Inspiration, Ambition, Ethics |
+| **Sage**         | —                         | Ambition → Purpose              | Emotional, Interaction, Inspiration, Ethics, Purpose  |
+| **Luminary**     | —                         | Interaction → Legacy            | Emotional, Inspiration, Ethics, Purpose, Legacy       |
+
+
+## Crafting Stations
+
+| Station        | Stats                 | Skills Used         | Products                        |
+|----------------|-----------------------|---------------------|---------------------------------|
+| Anvil          | Strength, Stamina     | Smithing, Tactics   | Weapons, Armor                  |
+| Loom           | Dexterity, Focus      | Tailoring           | Textiles, Cloth, Clothing       |
+| Altar          | Willpower, Focus      | Spellcraft, Alchemy | Magical Items, Potions          |
+| Kiln/Furnace   | Strength, Stamina     | Crafting, Smithing  | Ingots, Bricks, Glass           |
+| Mortar & Pestle| Dexterity, Willpower  | Alchemy, Healing    | Powders, Tinctures, Potions     |
+| Crafting Table | Dexterity, Focus      | Carpentry, Crafting | General Goods, Tools, Containers|
+|----------------|-----------------------|---------------------|---------------------------------
+
+## Traits
+
+| **Age**          | **New Domain Introduced** | **Evolving Domain (From → To)** | **Current Domains**                                   |
+| ---------------- | ------------------------- | ------------------------------- | ----------------------------------------------------- |
+| **Origin**       | Temperament               | None                            | Temperament                                           |
+| **Neophyte**     | Socialization             | None                            | Temperament, Socialization                            |
+| **Trainee**      | Cognition                 | Temperament → Emotional         | Socialization, Emotional, Cognition                   |
+| **Initiate**     | Identity                  | Socialization → Interaction     | Emotional, Cognition, Interaction, Identity           |
+| **Novice**       | Morals                    | Cognition → Ambition            | Emotional, Interaction, Identity, Morals, Ambition    |
+| **Practitioner** | —                         | Identity → Perspective          | Emotional, Interaction, Inspiration, Morals, Ambition |
+| **Adept**        | —                         | Morals → Ethics                 | Emotional, Interaction, Inspiration, Ambition, Ethics |
+| **Sage**         | —                         | Ambition → Purpose              | Emotional, Interaction, Inspiration, Ethics, Purpose  |
+| **Luminary**     | —                         | Interaction → Legacy            | Emotional, Inspiration, Ethics, Purpose, Legacy       |
