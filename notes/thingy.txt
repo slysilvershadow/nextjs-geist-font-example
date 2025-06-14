@@ -1,0 +1,187 @@
+# Build a fully modular procedural simulation in Python that:
+# ✅ Procedurally generates a world using layered environmental, geographic, and societal systems.
+# ✅ Includes modular sprite-based visual rendering of agents, creatures, terrain, and features.
+# ✅ Uses Python classes, YAML configuration files, and Enum-controlled vocabularies.
+# ✅ Follows a step-by-step world-generation pipeline using provided function names.
+
+# 🔧 Technologies to use:
+# - Python
+# - numpy for grid math
+# - PIL and Pygame possibly matplotlib for rendering 2D visual output
+# - pyyaml for YAML data input
+# - enum for structured types
+
+# 🔨 Implement the following world generation functions in sequence:
+def seed()
+def arrays()
+def mantle()
+def plates()
+def vectors()
+def motion()
+def interact()
+def subduction()
+def uplift()
+def elevation()
+def ice()
+def melt()
+def isostasy()
+def volcano()
+def seafloor()
+def wind()
+def moisture()
+def rivers()
+def erosion()
+def soil()
+def biome()
+def resources()
+def life()
+def climate()
+def weather()
+def features()
+def build()
+# Each function should be modular and build on the output of the previous one, culminating in a finalized world state.
+
+# 🧱 Create classes for all the following simulation entities. Each class must:
+# - Define a *_properties dictionary
+# - Accept YAML input to initialize state
+# - Use Enums for strict attributes (e.g. diet, climate type, stat names)
+
+# --- Entities & Components ---
+class Agent
+class Creature
+class Plant
+class Mineral
+class Water
+class Resource
+class DNA
+class Body
+class Brain
+class Memory
+class Emotion
+class Need
+class Trait
+class Stat
+class Skill
+class State
+class Action
+class Event
+class Task
+class Goal
+class Personality
+class Decision
+class Dialogue
+class Reputation
+class Relationship
+class Household
+class Settlement
+class Inventory
+class Item
+class Recipe
+class Food
+class Drink
+class Tool
+class Weapon
+class Armor
+class Material
+class Currency
+class Trade
+class Job
+class Spell
+class Affinity
+class Ritual
+class Leyline
+class Disease
+class Addiction
+class Mount
+class Festival
+
+# --- World & Environment ---
+class World
+class Tile
+class Terrain
+class Biome
+class Map
+class Faction
+class Beliefs
+class Culture
+class Climate
+class Ecosystem
+class Disaster
+
+# --- Simulation Timing ---
+class Clock
+class Scheduler
+class Tick
+class Time
+class Day
+class Month
+class Season
+class Year
+class Weather
+class Line_of_Sight
+class Hearing_Range
+class Log
+class Notification
+class Building
+class Furniture
+class Workbench
+
+# 🧠 Trait Domains
+# Traits evolve with age and behavior, across the following domains:
+# - Temperament
+# - Emotional
+# - Social
+# - Cognition
+# - Interaction
+# - Identity
+# - Moral
+# - Perspective
+# - Purpose
+# - Ethics
+# - Legacy
+
+# 👁️ Eye Types
+# Shapes: Almond, Round, Monolid, Downturned, Upturned, Hooded
+# Spacing: Close-set, Normal-set, Wide-set
+# Depth: Deep-set, Normal-set, Protruding
+
+# 🧍 Body Typing
+# Somatotypes: Ectomorph, Mesomorph, Endomorph
+# Body Shapes: Pear, Inverted Triangle, Apple, Rectangle, Hourglass
+
+# 🎨 SPRITE RENDERING & CONSTRUCTION
+# Render Order: Tail → Back legs → Torso → Arms → Head → Face → Hair → Accessories
+# Symmetry default: mirrored, with exceptions
+# Shape deformation via DNA parameters
+# Color via indexed palettes per character
+# Canvas: 64x128px, output to PNG or array
+
+# 🎞️ ANIMATION SYSTEM
+# - Modular skeletal animation (transform-based or pre-baked)
+# - DNA influences animation profile (e.g. long limbs = slow arcs)
+# - Core states: Idle, Movement, Combat, Social, Work, Emotion, Sleep, Death
+# - Expressive states: Joy (bounce), Anger (stomp), Fatigue (slump), Affection (sway), Stealth (creep)
+# - Features: biome posture, stamina breath rate, mood-based blinking, mutation-driven movement
+
+# 🖼️ Graphics Requirements:
+# - Procedurally generate tilemap-style terrain with elevation, moisture, biome, and river overlays.
+# - Render the map to an image grid with labeled or color-coded tile types.
+# - Each creature must have a modular sprite composed of parts (head, body, limbs, accessories).
+# - Attach creature sprite parts to a skeleton rig for idle/animated poses (basic 2D bone system).
+# - Display creature sprites on their tile location.
+# - Include a legend and/or map key for biome, elevation, water, and creature locations.
+# - Output the world map as a PNG or interactive visual window.
+
+# 🧰 Data & Tools
+# - Input Format: YAML config files
+# - Output: Visual rendering + JSON/YAML save
+# - Libraries: numpy, PIL, pygame, pyyaml, enum
+
+# 🧠 Additional:
+# - Use Enums to lock properties like `Mood`, `Diet`, `BiomeType`, `SkillType`, 'Polarity', etc.
+# - Include a `build()` function that calls all generation steps and then renders the final simulation.
+# - Support saving and reloading world state via YAML or JSON.
+
+# 🔁 Goal:
+# - Fully working simulation that loads data from YAML, builds the world step-by-step, populates it with life, and renders it visually with procedurally assembled graphics.
+# Generating a full summary of the current document content to help verify completeness
