@@ -1,0 +1,381 @@
+~World~
+    Grid based world
+    32x32 tiles
+    Biomes included are ocean, desert, forest, swamp, tundra, plains, and mountains.
+    Tiles will meet at the center, corner, or edge and will be rotated to account for all connections.
+    Base terrain types are grass, dirt, sand, snow, soil, ash, stone, water, cliff, and lava.
+    Soil types include tilled and untilled.
+    Stone types include granite, basalt and marble.
+    Ground types include dry, wet, frozen, soggy, rocky and clay.
+    Water types include swamp, beach, river, ocean, lake and frozen.
+    Day and night cycle will affect creature behavior.
+    Resource regeneration system also has decay mechanics
+
+WORLD_SIZES ={'small': [360, 360], 'medium': [1020, 1020], 'large': [1380, 1380]}
+
+World class:
+    def __init__(self, user: str, save_file: None, size: WORLD_SIZES, input_seed: None):
+        self.user = user
+        self.save_file
+        self.size = size
+        self.input_seed = input_seed
+        seed(input_seed)
+    def seed():
+        pass
+    def arrays():
+        pass
+    def mantle():
+        pass
+    def plates():
+        pass
+    def vectors():
+        pass
+    def motion():
+        pass
+    def interact():
+        pass
+    def subduction():
+        pass
+    def uplift():
+        pass
+    def elevation():
+        pass
+    def ice():
+        pass
+    def melt():
+        pass
+    def isostasy():
+        pass
+    def volcano():
+        pass
+    def seafloor():
+        pass
+    def wind():
+        pass
+    def moisture():
+        pass
+    def rivers():
+        pass
+    def erosion():
+        pass
+    def soil():
+        pass
+    def biome():
+        pass
+    def resources():
+        pass
+    def life():
+        pass
+    def climate():
+        pass
+    def weather():
+        pass
+    def features():
+        pass
+    def build:
+	    Made up of the rest of the other functions.
+	    Executes them in the correct order.
+	    It will take the inputs of the world size, and the seed(optional).
+	    It will then validate the inputs by enforcing a minumum and maxium world size.
+	    The seed will be used for reproducability and error finding.
+	    Outputs multiple variations of the world map and the finalized version its self.
+
+#Examples
+
+@dataclass
+class WorldConfig:
+    """Configuration settings for world generation"""
+    min_height: int = 256
+    max_height: int = 1024
+    temperature_bands: int = 5
+    moisture_bands: int = 5
+    tile_size: int = 32  # Standard LPC tile size
+    chunk_size: int = 64  # Size of each chunk
+    erosion_iterations: int = 50000
+    river_sources: int = 50
+    min_river_length: int = 10
+    
+    @property
+    def min_width(self) -> int:
+        return self.min_height * 2
+    
+    @property
+    def max_width(self) -> int:
+        return self.max_height * 2
+
+@dataclass
+class Droplet:
+    """Water droplet for erosion simulation"""
+    x: float
+    y: float
+    water: float = 1.0
+    sediment: float = 0.0
+    velocity: float = 0.0
+    direction: Tuple[float, float] = (0.0, 0.0)
+
+class BiomeDefinition:
+    """Comprehensive biome characteristics and rules"""
+    BIOME_DATA = {
+        'Desert': {
+            'base_tile': 'sand',
+            'decorations': ['cactus', 'bones', 'rocks', 'desert_shrub'],
+            'elevation_range': (0.2, 0.6),
+            'temperature_range': (0.7, 1.0),
+            'moisture_range': (0.0, 0.3),
+            'vegetation_density': 0.1,
+            'resource_types': ['gold', 'iron', 'copper'],
+            'creature_types': ['scorpion', 'snake', 'camel']
+        }
+    }
+
+~World Tags~
+    BIOMES = ['Forest', 'Grassland', 'Desert', 'Wetland', 'Highland', 'Coastal', 'Rockland']
+	TERRAIN_TYPES = ['soil',  'water', 'grass', 'stone', 'sand']
+	ALTITUDE = ['low', 'sea level', 'high']
+	TEMPS = ['hot', 'mild',  'cold', 'frozen']
+	HUMIDITY = ['wet', 'average', 'dry']
+	RESOURCES = ['tar pit', 'tree', 'flower', 'bush', 'vine', 'roots', 'fungi', 'metal deposit', 'crystal formations', 'rocks',  'decay']
+	RESOURCE_INTERACTION_TAGS = ['edible', 'medicinal', 'poisonous', 'volatile', 'sacred', 'corrosive', 'heavy', 'brittle', 'soft', 'sticky', 'slippery', 'fragile', 'dense', 'porous', 'nutritious', 'decaying', 'parasitic', 'cursed']
+	RESOURCE_MOD = ['wet', None, 'dry']
+	PRODUCE = ['wood', 'leaf', 'petal', 'root', 'ore', 'shard', 'stem', 'seed', 'fruit', 'bark', 'resin', 'thorns', 'moss', 'spores', 'stone', 'clay', 'sand', 'salt', 'coal', 'gem' 'ash', 'stick', 'mold', 'compost']
+	WEATHER = ['wind', 'precipitation', 'tectonics']
+	WEATHER_TEMP = ['hot', 'cold']
+	WEATHER_SEVERITY = ['mild', 'severe']
+
+### 1. Boreal Forest
+
+* **Tree:** Spruce
+* **Bush:** Lingonberry
+* **Flower:** Fireweed
+* **Stone:** Granite
+* **Gemstone:** Garnet
+* **Metal:** Iron Ore
+* **Mineral Deposit:** Quartz Vein
+* **Fruit:** Wild Blueberry
+* **Vegetable:** Wild Root (e.g., cattail root)
+* **Fungus:** Chanterelle
+* **Herb:** Labrador Tea
+* **Resin/Sap:** Pine Resin
+* **Fiber Source:** Cedar Bark
+* **Fuel Source:** Deadwood
+* **Wax:** Beeswax
+
+---
+
+### 2. Deciduous Forest
+
+* **Tree:** Oak
+* **Bush:** Blackberry
+* **Flower:** Trillium
+* **Stone:** Limestone
+* **Gemstone:** Amethyst
+* **Metal:** Copper Ore
+* **Mineral Deposit:** Clay Deposit
+* **Fruit:** Wild Apple
+* **Vegetable:** Jerusalem Artichoke
+* **Fungus:** Morel
+* **Herb:** Stinging Nettle
+* **Resin/Sap:** Birch Sap
+* **Fiber Source:** Flax
+* **Fuel Source:** Hardwood Logs
+* **Wax:** Beeswax
+
+---
+
+### 3. Rainforest
+
+* **Tree:** Mahogany
+* **Bush:** Coffee Plant
+* **Flower:** Orchid
+* **Stone:** Basalt
+* **Gemstone:** Emerald
+* **Metal:** Bauxite (Aluminum Ore)
+* **Mineral Deposit:** Clay Deposit
+* **Fruit:** Guava
+* **Vegetable:** Taro
+* **Fungus:** Turkey Tail
+* **Herb:** Lemongrass
+* **Resin/Sap:** Dragon’s Blood Resin
+* **Fiber Source:** Rattan
+* **Fuel Source:** Bamboo
+* **Wax:** Carnauba Wax
+
+---
+
+### 4. Tundra
+
+* **Tree:** Dwarf Birch
+* **Bush:** Crowberry
+* **Flower:** Arctic Poppy
+* **Stone:** Slate
+* **Gemstone:** Serpentine
+* **Metal:** Nickel Ore
+* **Mineral Deposit:** Permafrost Clay
+* **Fruit:** Cloudberry
+* **Vegetable:** Arctic Radish
+* **Fungus:** Reindeer Lichen
+* **Herb:** Mountain Avens
+* **Resin/Sap:** None (scarce)
+* **Fiber Source:** Arctic Willow Bark
+* **Fuel Source:** Peat
+* **Wax:** None (scarce)
+
+---
+
+### 5. Steppe
+
+* **Tree:** Siberian Elm
+* **Bush:** Wild Rose
+* **Flower:** Goldenrod
+* **Stone:** Sandstone
+* **Gemstone:** Tiger’s Eye
+* **Metal:** Iron Ore
+* **Mineral Deposit:** Salt Deposit
+* **Fruit:** Wild Plum
+* **Vegetable:** Wild Onion
+* **Fungus:** Puffball
+* **Herb:** Sagebrush
+* **Resin/Sap:** None (minimal)
+* **Fiber Source:** Hemp
+* **Fuel Source:** Dry Grass
+* **Wax:** Beeswax
+
+---
+
+### 6. Savanna
+
+* **Tree:** Acacia
+* **Bush:** Marula
+* **Flower:** Flame Lily
+* **Stone:** Laterite
+* **Gemstone:** Tiger’s Eye
+* **Metal:** Manganese Ore
+* **Mineral Deposit:** Clay Deposit
+* **Fruit:** Baobab Fruit
+* **Vegetable:** Sorghum
+* **Fungus:** Termite Fungi
+* **Herb:** Lemongrass
+* **Resin/Sap:** Gum Arabic
+* **Fiber Source:** Sisal
+* **Fuel Source:** Dry Wood
+* **Wax:** Beeswax
+
+---
+
+### 7. Polar Desert
+
+* **Tree:** None (bare)
+* **Bush:** None
+* **Flower:** None
+* **Stone:** Quartzite
+* **Gemstone:** Obsidian
+* **Metal:** None (scarce)
+* **Mineral Deposit:** Salt Deposit
+* **Fruit:** None
+* **Vegetable:** None
+* **Fungus:** None
+* **Herb:** None
+* **Resin/Sap:** None
+* **Fiber Source:** None
+* **Fuel Source:** Peat (if any)
+* **Wax:** None
+
+---
+
+### 8. Semi-Arid Desert
+
+* **Tree:** Mesquite
+* **Bush:** Creosote
+* **Flower:** Desert Marigold
+* **Stone:** Sandstone
+* **Gemstone:** Turquoise
+* **Metal:** Copper Ore
+* **Mineral Deposit:** Gypsum
+* **Fruit:** Prickly Pear
+* **Vegetable:** Agave
+* **Fungus:** Desert Truffle
+* **Herb:** Sagebrush
+* **Resin/Sap:** Cholla Cactus Sap
+* **Fiber Source:** Yucca
+* **Fuel Source:** Dry Brush
+* **Wax:** Candelilla Wax
+
+---
+
+### 9. Sand Desert
+
+* **Tree:** Date Palm (near oases)
+* **Bush:** Saltbush
+* **Flower:** Desert Lily
+* **Stone:** Sandstone
+* **Gemstone:** Carnelian
+* **Metal:** Iron Ore
+* **Mineral Deposit:** Quartz Sand
+* **Fruit:** Date
+* **Vegetable:** None
+* **Fungus:** None
+* **Herb:** Desert Sage
+* **Resin/Sap:** None
+* **Fiber Source:** Palm Fibers
+* **Fuel Source:** Deadwood
+* **Wax:** None
+
+---
+
+### 10. Heath
+
+* **Tree:** Scots Pine
+* **Bush:** Heather
+* **Flower:** Bell Heather
+* **Stone:** Granite
+* **Gemstone:** Agate
+* **Metal:** Iron Ore
+* **Mineral Deposit:** Peat
+* **Fruit:** Crowberry
+* **Vegetable:** Wild Carrot
+* **Fungus:** Puffball
+* **Herb:** Mint
+* **Resin/Sap:** Pine Resin
+* **Fiber Source:** Flax
+* **Fuel Source:** Peat
+* **Wax:** Beeswax
+
+---
+
+### 11. Chaparral
+
+* **Tree:** Manzanita
+* **Bush:** Toyon
+* **Flower:** California Poppy
+* **Stone:** Schist
+* **Gemstone:** Jasper
+* **Metal:** Gold Ore (small veins)
+* **Mineral Deposit:** Clay
+* **Fruit:** Wild Grapes
+* **Vegetable:** Chia
+* **Fungus:** Morel
+* **Herb:** Sage
+* **Resin/Sap:** Manzanita Resin
+* **Fiber Source:** Jute
+* **Fuel Source:** Deadwood
+* **Wax:** Beeswax
+
+---
+
+### 12. Swamp
+
+* **Tree:** Bald Cypress
+* **Bush:** Buttonbush
+* **Flower:** Water Lily
+* **Stone:** Mudstone
+* **Gemstone:** Amber
+* **Metal:** Iron Ore
+* **Mineral Deposit:** Peat
+* **Fruit:** Cranberry
+* **Vegetable:** Wild Rice
+* **Fungus:** Shelf Fungus
+* **Herb:** Marshmallow Plant
+* **Resin/Sap:** Pine Sap
+* **Fiber Source:** Cattail Fibers
+* **Fuel Source:** Peat
+* **Wax:** Beeswax
