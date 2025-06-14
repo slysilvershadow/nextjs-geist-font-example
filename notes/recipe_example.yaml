@@ -1,0 +1,8 @@
+Recipe:
+  name: <item_name>
+  ingredients: 
+    - <item>: <quantity>
+    - ...
+  station: <optional crafting station>
+  process: <optional special process, e.g. "smelt", "ferment", "boil">
+  output_quantity: <default 1>
