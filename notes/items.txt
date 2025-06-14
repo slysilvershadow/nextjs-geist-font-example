@@ -1,0 +1,415 @@
+	Crafting System
+		Natural Environment (No recipe needed)
+			Air, Water, Grass, Dirt, Mud, Sand, Snow, Lava
+		Crafting Materials & Chains
+			Botanical: 
+				Trees → Wood → Plank → Structures, etc.
+			Geological: 
+				Rock → Stone → Clay → Bricks, etc.
+			Processed: 
+				Iron Ore → Ingot → Tool/Weapon
+			Magical: 
+				Sacred Plant + Crystal → Essence → Potion, Enchantment
+		Containers
+			Barrels, Bags, Chests, Buckets, Jars, Scroll cases, etc.
+		Crafting Stations
+			Tanning Rack, Loom, Spinning Wheel, Press, Altar, Kiln, Furnace, Anvil, Mortar & Pestle, etc.
+		Tools & Weapons
+			Axes, Hammers, Spears, Swords, Pickaxes, Bows, Traps, Bombs, etc.
+		Structures & Furniture
+			Walls, Floors, Doors, Gates, Wells, Tables, Beds, Shelters
+		Equipment
+			Armor (Helmets, Chest plates), Clothing (Cloaks, Pants), Jewelry (Rings, Amulets)
+		Consumables
+			Raw: 	
+				Meat, Fish, Fruit, Berries
+			Processed: 
+				Bread, Stews, Soups, Cured Meats
+			Drinks: 
+				Tea, Wine, Juice, Mead, Ale
+			Magical: 
+				Potions, Elixirs, Poisons, Tinctures
+		Specialty & Magical Items
+			Essence, Magic Dust, Magical Herb, 
+
+AIR
+WATER
+GRASS
+DIRT
+MUD
+SAND
+SNOW
+LAVA
+---
+CURRENCY
+Recipe: Copper Ore + Iron Ore (refine into coins).
+GEM
+Recipe: Gemstone + Flint (cut into a gem).
+CRYSTAL
+Recipe: Glass + Essence (forms into crystal).
+---
+TREE
+Recipe: Seed + Water (planted).
+FLOWER
+Recipe: Herb + Water (grown).
+BUSH
+Recipe: Seed + Dirt (planted).
+SAP
+Recipe: Tree + Axe (harvested from trees).
+VINE
+Recipe: Herb + Water (grows in humid areas).
+FRUIT
+Recipe: Flowering Plant + Water (grown).
+SEED
+Recipe: Fruit or Bush (seeds harvested).
+STICK
+Recipe: Wood + Axe (harvested).
+HERB
+Recipe: Plant + Water (foraged).
+MOSS
+Recipe: Stone + Water (grows in damp areas).
+MUSHROOM
+Recipe: Moss + Damp Ground (found in forests or caves).
+ROCK
+Recipe: Pickaxe + Stone (mined).
+STONE
+Recipe: Rock + Hammer (refined).
+CLAY
+Recipe: Dirt + Water (combined).
+COAL
+Recipe: Wood + Fire (burned).
+SALT
+Recipe: Water + Sun (evaporated).
+ASH
+Recipe: Wood + Fire (burned).
+ICE
+Recipe: Water + Cold Environment (frozen).
+Wood Derived
+WOOD
+Recipe: Tree + Axe (chopped).
+PLANK
+Recipe: Wood + Crafting Table (sawed).
+---
+BAG
+Recipe: Cloth + Thread (stitched).
+BARREL
+Recipe: Wood + Metal Nails (constructed).
+CRATE
+Recipe: Wood + Nails (assembled).
+CHEST
+Recipe: Wood + Iron (crafted).
+BUCKET
+Recipe: Wood + Iron Rim (crafted).
+JAR
+Recipe: Glass (molded).
+SACK
+Recipe: Cloth + Thread (sewn).
+CRUCIBLE
+Recipe: Clay + Heat (fired).
+PHIAL
+Recipe: Glass + Heat (blown).
+SADDLEBAG
+Recipe: Leather + Thread (sewn).
+CART
+Recipe: Wood + Wheels + Iron (assembled).
+WAGON
+Recipe: Wood + Wheels + Iron + Leather (assembled).
+BASKET
+Recipe: Vine + Thread (woven).
+POUCH
+Recipe: Leather + Thread (stitched).
+SCROLLCASE
+Recipe: Wood + Leather (constructed).
+---
+TANNING RACK
+Recipe: Wood + Rope (constructed).
+LOOM
+Recipe: Wood + Thread + Rope (constructed).
+SPINNING WHEEL
+Recipe: Wood + Rope (assembled).
+PRESS
+Recipe: Wood + Stone + Rope (crafted).
+GRINDSTONE
+Recipe: Stone + Iron (crafted).
+MORTAR AND PESTLE
+Recipe: Stone + Wood (crafted).
+ALTAR
+Recipe: Wood + Stone (assembled).
+CAMPFIRE
+Recipe: Wood + Flint (ignited).
+FURNACE
+Recipe: Stone + Clay (constructed).
+ANVIL
+Recipe: Iron + Stone (crafted).
+CRAFTING TABLE
+Recipe: Wood + Nails (assembled).
+KILN
+Recipe: Clay + Stone (fired).
+CALDRON
+Recipe: Iron + Wood (assembled).
+MOLD
+Recipe: Clay + Heat (fired).
+---
+AXE
+Recipe: Wood + Stone (crafted).
+HAMMER
+Recipe: Wood + Stone (crafted).
+KNIFE
+Recipe: Stone + Wood (crafted).
+SPEAR
+Recipe: Wood + Stone (crafted).
+SWORD
+Recipe: Iron + Wood (crafted).
+PICKAXE
+Recipe: Iron + Wood (crafted).
+SHOVEL
+Recipe: Wood + Stone (crafted).
+SICKLE
+Recipe: Iron + Wood (crafted).
+SCYTHE
+Recipe: Iron + Wood (crafted).
+NET
+Recipe: Thread + Wood (woven).
+BOW
+Recipe: Wood + String (crafted).
+ARROW
+Recipe: Wood + Feather + Stone (crafted).
+TRAP
+Recipe: Wood + Rope (crafted).
+BOMB
+Recipe: Gunpowder + Metal (crafted).
+WHIP
+Recipe: Leather + Rope (crafted).
+FLINT
+Recipe: Stone + Fire (struck).
+SHIELD
+Recipe: Wood + Iron (crafted).
+WAND
+Recipe: Wood + Essence (enchanted).
+TONGS
+Recipe: Iron + Wood (crafted).
+CHISEL
+Recipe: Stone + Wood (crafted).
+SHEARS
+Recipe: Iron (crafted).
+HOE
+Recipe: Wood + Iron (crafted).
+FUNNEL
+Recipe: Clay (crafted).
+SIEVE
+Recipe: Wood + Cloth (crafted).
+BROOM
+Recipe: Wood + Straw (crafted).
+RAKE
+Recipe: Wood + Iron (crafted).
+STIRRER
+Recipe: Wood (crafted).
+---
+NEST
+Recipe: Straw + Twine (constructed).
+WALL
+Recipe: Wood + Stone (built).
+DOOR
+Recipe: Wood + Hinges (crafted).
+FLOOR
+Recipe: Wood (laid down).
+FENCE
+Recipe: Wood (assembled).
+GATE
+Recipe: Wood + Hinges (assembled).
+WELL
+Recipe: Stone + Wood (constructed).
+TABLE
+Recipe: Wood (crafted).
+BED
+Recipe: Wood + Cloth (constructed).
+CHAIR
+Recipe: Wood (crafted).
+SIGNPOST
+Recipe: Wood (crafted).
+SHELTER
+Recipe: Wood + Cloth (constructed).
+---
+CHESTPLATE
+Recipe: Iron + Leather (crafted).
+BOOT
+Recipe: Leather + Thread (crafted).
+HELMET
+Recipe: Iron + Leather (crafted).
+GREAVES
+Recipe: Iron + Leather (crafted).
+GLOVES
+Recipe: Leather + Thread (crafted).
+CLOAK
+Recipe: Cloth + Thread (sewn).
+BELT
+Recipe: Leather + Thread (stitched).
+PANTS
+Recipe: Cloth + Thread (sewn).
+MASK
+Recipe: Leather + Thread (stitched).
+RING
+Recipe: Gem + Metal (crafted).
+AMULET
+Recipe: Gem + Metal (crafted).
+---
+MEAT
+Recipe: Animal + Knife (butchered).
+FISH
+Recipe: Fishing Rod + Water (caught).
+BERRY
+Recipe: Bush (harvested).
+NUT
+Recipe: Tree (harvested).
+EGG
+Recipe: Bird + Nest (collected).
+MILK
+Recipe: Animal + Bucket (milked).
+BREAD
+Recipe: Flour + Water + Heat (baked).
+MUSH
+Recipe: Mushroom + Water (boiled).
+STEW
+Recipe: Meat + Vegetable + Water (cooked).
+SOUP
+Recipe: Vegetable + Water (boiled).
+CURED MEAT
+Recipe: Meat + Salt (preserved).
+POTION
+Recipe: Herb + Essence + Water (brewed).
+ELIXIR
+Recipe: Potion + Gem (enriched).
+POISON
+Recipe: Venom + Herb (crafted).
+TINCTURE
+Recipe: Herb + Alcohol (infused).
+TEA
+Recipe: Herb + Water (steeped).
+WINE
+Recipe: Grape + Water + Fermenting Vessel (fermented).
+ALE
+Recipe: Barley + Water + Yeast (brewed).
+JUICE
+Recipe: Fruit + Water (pressed).
+MEAD
+Recipe: Honey + Water + Fermenting Vessel (fermented).
+---
+ESSENCE
+Recipe: Sacred Herb + Magical Crystal (extracted).
+MAGIC DUST
+Recipe: Essence + Powdered Gemstone (ground together).
+MAGICAL HERB
+Recipe: Sacred Plant + Water (harvested under moonlight).
+PHIAL OF MAGIC
+Recipe: Essence + Glass Phial (filled).
+ENCHANTED GEM
+Recipe: Gemstone + Magic Dust (enchanted).
+RUNE STONE
+Recipe: Stone + Magical Ink (carved with runes).
+MAGICAL INGREDIENTS KIT
+Recipe: Essence + Magical Herb + Crystal (crafted).
+---
+ALCHEMICAL SALTS
+Recipe: Salt + Magical Herb (combined).
+MYSTIC OIL
+Recipe: Essence + Herb + Oil (extracted).
+FIREBLOOM
+Recipe: Flame Herb + Heat (cultivated).
+FROSTBITE LEAF
+Recipe: Ice Herb + Cold Environment (collected).
+VENOM
+Recipe: Snake + Venom Sac (extracted).
+DISTILLED ESSENCE
+Recipe: Essence + Water + Fire (distilled).
+PHOENIX FEATHER
+Recipe: Phoenix + Fire (harvested).
+---
+ROASTED MEAT
+Recipe: Meat + Fire (roasted).
+BOILED MEAT
+Recipe: Meat + Water (boiled).
+CABBAGE SOUP
+Recipe: Cabbage + Water + Heat (cooked).
+VEGETABLE STEW
+Recipe: Vegetable + Water + Heat (boiled).
+GRILLED FISH
+Recipe: Fish + Fire (grilled).
+PICKLES
+Recipe: Vegetable + Salt (fermented).
+CURED FISH
+Recipe: Fish + Salt (cured).
+SAUERKRAUT
+Recipe: Cabbage + Salt (fermented).
+HONEY
+Recipe: Beeswax + Flowers (harvested).
+BISCUIT
+Recipe: Flour + Water + Heat (baked).
+CAKE
+Recipe: Flour + Sugar + Egg + Water + Heat (baked).
+PIE
+Recipe: Fruit + Flour + Butter + Heat (baked).
+BREAD
+Recipe: Flour + Water + Yeast + Heat (baked).
+---
+HEALING HERB
+Recipe: Plant + Water (foraged).
+HEALING POTION
+Recipe: Healing Herb + Water + Glass Phial (brewed).
+STAMINA POTION
+Recipe: Ginseng + Water + Glass Phial (brewed).
+MAGIC POTION
+Recipe: Essence + Water + Glass Phial (brewed).
+POISON
+Recipe: Venom + Water (brewed).
+ANTIDOTE
+Recipe: Healing Herb + Venom + Water (brewed).
+---
+CLOTH
+Recipe: Cotton + Thread (woven).
+THREAD
+Recipe: Cotton + Spinning Wheel (spun).
+LEATHER
+Recipe: Hide + Tanning Rack (tanned).
+CLOAK
+Recipe: Cloth + Thread (stitched).
+MASK
+Recipe: Leather + Thread (stitched).
+---
+COOKING POT
+Recipe: Clay + Stone (crafted).
+TALLOW
+Recipe: Animal Fat + Heat (rendered).
+BEESWAX
+Recipe: Honeycomb (extracted).
+IRON INGOT
+Recipe: Iron Ore + Furnace (smelted).
+GOLD INGOT
+Recipe: Gold Ore + Furnace (smelted).
+SILVER INGOT
+Recipe: Silver Ore + Furnace (smelted).
+COPPER INGOT
+Recipe: Copper Ore + Furnace (smelted).
+
+~Item Tags~
+	RARITY = ['common', 'uncommon', 'rare', 'epic', 'legendary', 'mythic']
+	DURABILITY = ['shoddy', 'fragile', 'sturdy', 'hardened', 'reinforced', 'indestructible']
+	CONDITION = ['ruined', 'damaged', 'functional', 'maintained', 'excellent', 'mint']
+	QUALITY = ['crude', 'ordinary', 'refined', 'skilled', 'exceptional', 'masterpiece'] 
+	VALUE = ['junk', 'cheap', 'standard', 'priceless', 'relic', 'legendary']
+	WEIGHT = ['featherlight', 'light', 'medium', 'heavy', 'cumbersome', 'massive']
+	AGED = ['new', 'seasoned', 'aged', 'antique', 'relic', 'ancient']
+	PORTABILITY = ['pocketable', 'handheld', 'packable', 'bulky']
+	INTEGRATION = ['mounted', 'installed', 'anchored']
+	UTILITY_TAGS = ['structural', QUALITY, TEXTILE_USE, 'fuel', 'fertilizer', 'sealant', 'binding', 'dye source', 'alchemy base', 'mechanical']
+	MATERIAL = ['cotton', 'wool', 'linen', 'silk', 'hide', 'felt', 'softwood', 'hardwood', 'reed', 'cork', 'vine', 'granite', 'limestone', 'obsidian', 'slate', 'clay', 'sandstone', 'iron', 'steel', 'copper', 'bronze', 'silver', 'gold', 'mithril', 'adamantine', 'terracotta', 'porcelain', 'glass', 'crystal', 'bone', 'horn', 'shell', 'sinew', 'resin']
+	STRENGTH = ['delicate', 'lightweight', 'durable', 'strong', 'heavy-duty']
+	FLEXIBILITY = ['stiff', 'pliant', 'flexible', 'elastic']
+	INSULATION = ['bare', 'light', 'warm', 'thermal']
+	WATERPROOFING = ['absorbent', 'moisture-wicking', 'water-resistant', 'water-repellent', 'waterproof']
+	FLAMEPROOFING = ['flammable', 'fire-resistant', 'fire-proof']
+	TEMP_SENSITIVITY = ['heat-sensitive', 'cold-sensitive', 'temp-stable', 'heat-resistant', 'cold-resistant']
+	WEATHER_SENSITVITY = ['rain-sensitive', 'wind-resistant', 'snow-sensitive', 'stormproof']
+	DECAY_RATE = ['perishable', 'semi-perishable', 'hardy', 'preserved', 'imperishable']
+	STORAGE_REQ = ['temp-sensitive', 'airtight-required', 'dry-stored', 'dark-stored']
+	DEGRADABILITY = ['rot-prone', 'mold-prone', 'rust-prone', 'crumble-prone', 'fermentable']
+
