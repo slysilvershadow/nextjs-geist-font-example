@@ -1,0 +1,491 @@
+~DNA~
+    DNA-Based Sprite & Animation System
+    DNA SCHEMA OVERVIEW
+    Every character is generated using a unique DNA string composed of numeric and binary values. These values define pixel-based appearance, structure, and animation behavior. DNA traits influence body part shape, size, positioning, color, and even movement dynamics.
+    BODY PART PARAMETERS
+	    HEAD
+		    DNA Keys:
+            	BODY_TYPES = ['Ectomorph', 'Mesomorph', 'Endomorph']
+			`head_shape`, `head_width`, `head_height`, `jaw_style`
+		    Each head shape defines the base silhouette:
+                HEAD_SHAPES = ['Oval', 'Round', 'Square', 'Oblong', 'Heart', 'Triangle', 'Diamond', 'Base-Down Diamond', 'Pentagon']
+			    Head1:
+				    Long oval; ¾ width-to-height; rounded chin, wide cheekbones.
+			    Head2:
+				    Soft round; equal width/height; full cheeks, gentle jaw.
+			    Head3:
+				    Angular; square jaw, broad forehead.
+			    Head4:
+				    Narrow and tall; sharp features, high forehead.
+			    Head5:
+				    Heart shape; wide forehead, narrow pointed chin.
+			    Head6:
+				    Inverted triangle; wide jawline, narrow forehead, full cheeks.
+			    Head7:
+				    Diamond; narrow chin/forehead, high cheekbones.
+			    Head8:
+				    Pear-shaped; widest below cheekbones.
+			    Head9:
+				    Hybrid; broad jaw, pronounced chin, strong cheekbones.
+    EYES
+	    DNA Keys:
+		    `eye_shape`, `eye_size`, `eye_spacing`, `eye_depth`, `eye_color`
+	    Shapes: 
+        	Almond, Round, Monolid, Downturned, Upturned
+	    Spacing:
+        	Close, Normal, Wide
+	    Depth:
+		    Deep, Normal, Protruding
+	    Colors:
+		    Purple, Red, Grey, Blue, Green, Hazel, Brown
+    MOUTH
+	    DNA Keys:
+		    `mouth_type`, `mouth_width`, `mouth_y_offset`
+	    Defines shape (0–5), width (3–10 px), and vertical offset from nose/eyes.
+    HAIR
+	    DNA Keys:
+	    	`hair_style`, `hair_density`, `hair_texture`, `hair_color`, `has_bangs`, bangs_type`
+	    Styles: 
+            Long, short, shaved, mohawk, wild, etc.
+	    Textures: 
+            Smooth, spiked, curly, dreadlocked
+	    Color:
+            Palette-indexed
+	    Bangs: 
+            Straight, Covers one eye, etc
+    EARS
+	    DNA Keys:
+		    `ear_type`, `ear_size`, `ear_position`
+        Types: 
+		    Human, Elf, Beast, Frilled, Winged
+	    Position: 
+		    Side, Low, High, Hidden
+    BODY (TORSO)
+	    DNA Keys: 
+		    `body_type`, `body_shape`
+	    Types:
+		    Ectomorph: Lean, long limbs, low fat, Mesomorph: Muscular, athletic, Endomorph:** Round, higher fat
+	    Shapes (1–5):
+            BODY_SHAPES = ['Pear', 'Inverted Triangle', 'Apple', 'Rectangle', 'Hourglass']
+		    Variations of shoulder-to-hip proportions and waist definition
+    ARMS
+    	DNA Keys:
+		    `arm_count`, `arm_length`, `arm_thickness`, `hand_type`, `arm_angle_rest`, `shoulder_mount`
+	    Types:
+		    Clawed, Fingered, Hooved, Tool-like
+	    Mount:
+		    Top, Side, Front
+    LEGS
+	    DNA Keys:
+		    `leg_count`, `leg_length`, `leg_shape`, `foot_type`, `leg_spacing`, `knee_joint_angle`
+	    Shapes: 
+		    Straight, Digitigrade, Reverse-joint
+	    Foot Types: 
+		    Paw, Hoof, Boot, Claw
+    EXTRA FEATURES
+	    DNA Keys:
+		    `has_tail`, `tail_length`, `tail_type`, `horn_count`, `horn_shape`, `wing_type`
+	    Tail Lengths:
+		    Stubby, Short, Medium, Long
+	    Tail Types:
+		    Furred, Scaled, Spiked, Stubby
+	    Wing Types:
+		    Feathered, Bat, Ethereal
+	    Horns:
+		    Spiral, Curved, Straight
+            
+About different options
+Head/Face shapes: 
+Oval
+	Width vs Height: Width is ~¾ of the height
+	Jawline: Gently rounded, smooth taper
+	Cheekbones: Slightly wider than the forehead and jaw
+	Forehead: Balanced, slightly narrower than cheekbones
+	Chin: Soft and rounded
+Round
+	Width vs Height: Nearly equal
+	Jawline: Rounded and soft
+	Cheekbones: Full and prominent
+	Forehead: Rounded and broad
+	Chin: Round, blending with the jaw
+Square
+	Width vs Height: Nearly equal
+	Jawline: Broad, flat, sharply angled
+	Cheekbones: Equal in width to jaw and forehead
+	Forehead: Wide and squared
+	Chin: Flat or square-shaped
+Oblong
+	Width vs Height: Height is noticeably greater
+	Jawline: Defined and narrow
+	Cheekbones: Subtle, align with jaw and forehead
+	Forehead: Tall and broad
+	Chin: Pointed or rounded
+Heart
+	Width vs Height: Moderate height, wide upper half
+	Jawline: Narrow, tapering downward
+	Cheekbones: High and prominent
+	Forehead: Broadest point of the face
+	Chin: Sharp, narrow, or pointed
+Triangle (Base-Down)
+	Width vs Height: Balanced, but weight is in the jaw
+	Jawline: Broadest feature, prominent and squared
+	Cheekbones: Full, but not wider than jaw
+	Forehead: Narrowest feature
+	Chin: Broad and solid
+Diamond
+	Width vs Height: Slightly longer than wide
+	Jawline: Tapers sharply from cheeks
+	Cheekbones: Highest and widest point
+	Forehead: Narrow
+	Chin: Pointed and narrow
+Base-Down Diamond
+	Width vs Height: Slightly longer than wide
+	Jawline: Slightly wider than forehead, tapering chin
+	Cheekbones: High but widest below the cheekbone line
+	Forehead: Narrow, but not sharp
+	Chin: Defined, slightly rounded or pointed
+Pentagon
+	Width vs Height: Moderately long
+	Jawline: Broad and angular
+	Cheekbones: Strong, but not the widest point
+	Forehead: Narrow to average
+	Chin: More pronounced and square or pointed
+Body Types
+Ectomorph
+	Shoulder Width: Narrow
+	Waist Width: Slim
+	Hip Width: Narrow
+	Joint Size: Small and delicate
+	Limb Length: Long arms and legs
+	Torso Length: Longer and flatter
+	Musculature: Slight, hard to build muscle
+	Body Fat: Low, difficulty storing fat
+	Metabolism: Fast, high calorie burn
+	Posture Tendency: Slightly stooped or tall and straight
+	Overall Proportions: Linear and rectangular
+Mesomorph
+	Shoulder Width: Broad
+	Waist Width: Narrow to average
+	Hip Width: Proportional to shoulders, slightly narrower
+	Joint Size: Medium, balanced structure
+	Limb Length: Proportional arms and legs
+	Torso Length: Average, solid core
+	Musculature: Naturally defined, builds easily
+	Body Fat: Moderate, easier to manage
+	Metabolism: Efficient and balanced
+	Posture Tendency: Upright and confident
+	Overall Proportions: Triangular or V-shaped upper body
+Endomorph
+	Shoulder Width: Wide
+	Waist Width: Broad
+	Hip Width: Wide
+	Joint Size: Large, sturdy bones
+	Limb Length: Shorter arms and legs
+	Torso Length: Shorter and thicker
+	Musculature: Gains muscle and fat easily, less visible definition
+	Body Fat: High, stores fat readily
+	Metabolism: Slow, energy efficient
+	Posture Tendency: Slouched or compressed
+	Overall Proportions: Rounded, pear- or oval-shaped frame
+Body Shapes
+Pear
+	Shoulders: Narrow
+	Waist: Narrow, well-defined
+	Waist Definition: High
+	Hips: Widest point
+	Weight Distribution: Lower body (hips, thighs, buttocks)
+Inverted Triangle
+	Shoulders: Broadest point
+	Waist: Less defined
+	Waist Definition: Low
+	Hips: Narrow
+	Weight Distribution: Upper body (shoulders, chest, back)
+Apple
+	Shoulders: Average to broad
+	Waist: Wide, less defined
+	Waist Definition: Low to none
+	Hips: Similar in width to shoulders
+	Weight Distribution: Midsection (abdomen, waist, torso)
+Rectangle
+	Shoulders: Similar width to hips
+	Waist: Slightly narrower or equal
+	Waist Definition: Minimal
+	Hips: Similar width to shoulders
+	Weight Distribution: Evenly distributed, with a straight silhouette
+Hourglass
+	Shoulders: Equal to hips
+	Waist: Significantly narrower
+	Waist Definition: High
+	Hips: Equal to shoulders
+	Weight Distribution: Balanced between chest and hips
+Eye Shapes
+Almond Eyes
+	Outer Corners: Slightly pointed, neither raised nor lowered
+	Inner Corners: Rounded and narrow
+	Crease Visibility: Visible and natural
+	Lid Exposure: Moderate — visible but not overly open
+	Upper Lid Shape: Tapered smoothly toward the outer corner
+Round Eyes
+	Outer Corners: Rounded and often neutral in tilt
+	Inner Corners: Soft and open
+	Crease Visibility: Prominent
+	Lid Exposure: High — more sclera (white of the eye) visible
+	Upper Lid Shape: Full and rounded
+Monolid Eyes
+	Outer Corners: Often neutral or slightly downturned
+	Inner Corners: Can be rounded or angled
+	Crease Visibility: Minimal to none
+	Lid Exposure: Smooth surface from lash to brow
+	Upper Lid Shape: Flat and clean-lined
+Downturned Eyes
+	Outer Corners: Lower than the inner corners
+	Inner Corners: Higher and typically rounded
+	Crease Visibility: Varies — can be prominent or hidden
+	Lid Exposure: Medium to high
+	Upper Lid Shape: Slight droop near outer corner
+Upturned Eyes
+	Outer Corners: Higher than inner corners
+	Inner Corners: Lower, usually rounded
+	Crease Visibility: Typically visible
+	Lid Exposure: Medium
+	Upper Lid Shape: Sweeps upward, often cat-like
+Hooded Eyes
+	Outer Corners: Neutral or slightly downturned
+	Inner Corners: Varies
+	Crease Visibility: Hidden or partially obscured by the upper lid skin
+	Lid Exposure: Low — lid appears smaller due to overhang
+	Upper Lid Shape: Heavy or folding over the lash line
+Eye Spacing
+Close-Spaced Eyes
+	Interocular Distance: Less than the width of one eye
+	Effect on Facial Balance: Features appear more centralized
+	Visual Impact: Eyes sit closer to the bridge of the nose
+	Common Associated Features: Narrow nose bridge, compact facial structure
+Normal-Spaced Eyes
+	Interocular Distance: Approximately equal to the width of one eye
+	Effect on Facial Balance: Symmetrical facial spacing
+	Visual Impact: Neutral alignment of eyes to facial features
+	Common Associated Features: Balanced proportions, average facial structure
+Wide-Spaced Eyes
+	Interocular Distance: Greater than the width of one eye
+	Effect on Facial Balance: Features appear more spread out
+	Visual Impact: Eyes sit farther from the bridge of the nose
+	Common Associated Features: Broad nose bridge or forehead, airy face layout
+Eye Depth
+Deep-set Eyes
+	Position: Set deeper into the skull
+	Brow Bone: Often more prominent
+	Lid Appearance: Upper eyelids may appear smaller or hooded
+	Shadowing: Natural shadow over the eyes, especially under the brow
+	Facial Effect: Eyes appear more intense or recessed
+Normal-set Eyes
+	Position: Average alignment within the eye socket
+	Brow Bone: Neutral in prominence
+	Lid Appearance: Balanced exposure of upper and lower lids
+	Shadowing: Even lighting around the eyes
+	Facial Effect: Neutral appearance, typical alignment
+Protruding Eyes
+	Position: Extend outward more than average
+	Brow Bone: Less prominent in comparison
+	Lid Appearance: More eyelid surface visible, especially lower lid
+	Shadowing: Minimal natural shadowing
+	Facial Effect: Eyes appear large, rounded, and prominent
+
+SPRITE RENDERING & CONSTRUCTION
+	Construction Rules
+		Render Order:
+			Tail → Back legs → Torso → Arms → Head → Face → Hair → Accessories
+		Symmetry:
+			Most features are mirrored unless flagged otherwise
+		Template Deformation:
+			Shapes are derived from templates and warped by DNA parameters
+		Palette System:
+			Color values are applied via indexed palettes per character
+Technical Details
+    | Aspect      | Recommendation                            |
+    | ----------- | ----------------------------------------- |
+    | Canvas Size | 64x128 px (base sprite resolution)        |
+    | DNA Input   | Seeded PRNG + DNA string                  |
+    | Output      | Pixel arrays or runtime `.png` export     |
+    | Storage     | Hash DNA string to filename               |
+    | Variation   | Noise/mutation from biome, age, or traits |
+ANIMATION SYSTEM
+    Modular Animation
+    Each body part animates independently with transformations instead of full-frame redraws:
+    	Head: 
+            Idle bob, turn, blink, speak
+	    Arms: 
+            Swing, gesture, lift
+	    Legs: 
+            Walk, jump, crouch
+	    Torso: 
+            Breathe, sway
+	    Tail/Wings: 
+            Flick, flap, curl
+	    Hair/Eyes: 
+            Bounce, blink, glance
+DNA-Based Motion
+    DNA traits directly influence how parts move:
+    | Trait            | Animation Impact                  |
+    | ---------------- | --------------------------------- |
+    | `leg_shape`      | Walk cycle style                  |    
+    | `arm_count`      | Multi-limb swing arcs             |
+    | `tail_type`      | Curl and wag dynamics             |    
+    | `horn_shape`     | Head movement weight              |
+    | `body_shape`     | Center of mass, bounce sway       |
+    | `wing_type`      | Enables flight animations         |
+    | `limb_length`    | Transform range and timing        |
+    | Emotional Traits | Changes expressiveness and pacing |
+    Store an `animation_profile` per character derived from DNA + mood.
+    Frame Options:
+        Option 1: Pre-baked Animation
+	    Procedurally generate frames on spawn
+	    Stored in texture atlases
+	    Efficient for low-power systems
+    Option 2: Transform-Based (Skeletal Pixel Animation)
+	    Each body part is a separate image/layer
+	    Use trigonometry or bones to rotate/move parts
+	    Ideal for gear overlay and real-time reactions
+CORE ANIMATION STATES
+     Category     | Examples                                     |
+    | ------------ | -------------------------------------------- |
+    | **Idle**     | Blink, breathe, tail flick                   |
+    | **Movement** | Walk, run, jump, climb                       |
+    | **Combat**   | Attack, defend, cast                         |
+    | **Social**   | Talk, sit, hug                               |
+    | **Work**     | Mine, craft, haul                            |
+    | **Emotion**  | Bounce (joy), slump (fatigue), stomp (anger) |
+    | **Sleep**    | Lie down, snore                              |
+    | **Death**    | Collapse, dissolve, fossilize                |
+    Animations consist of key poses + interpolated frames. Can be baked or runtime-generated.
+EXPRESSIVENESS & ADAPTIVITY
+    Characters reflect internal states through posture and pacing:
+    | State       | Motion Modifier         |
+    | ----------- | ----------------------- |
+    | High Morale | Bounce, faster gestures |
+    | Low Energy  | Slow, drooping limbs    |
+    | Anger       | Sharp, stomp-heavy      |
+    | Affection   | Open arms, soft sway    |
+    | Stealth     | Crouch, smooth steps    |
+    Bonus features for depth:
+    	Biome posture (e.g., hunch in cold)
+	    Dynamic breath rate based on stamina
+	    Eye-blink variation from mood
+	    Mutations affecting walk, sway, or symmetry
+~Interaction~
+    Creatures can interact in multiple ways.
+    Combat system has damage calculation based on attacking stats vs defensive stats.
+    Cooperation system will include group hunting, shared crafting, relationship building, realtionship decay, relationship destroying, family building.
+    Social hierarcy system where dominace affects resource access.
+    Comunication system where interaction outcome between creatures is determined based on personality compatibility as well as action chosen.
+    Visual indication will show outcomes of actions.
+~Aspects~
+    Action System:
+    	Action Categories:
+    		Movement: 
+    			Walk, Run, Jump, Climb, Crouch
+    		Interaction: 
+    			Inspect, Pick Up, Use, Speak, Trade, Steal, Give Item, Form Bond, Reproduce
+    		Combat: 
+    			Attack, Defend, Dodge, Special Ability, Equip
+    		Utility: 
+    			Craft, Heal, Rest, Signal
+    		Social: 
+    			Befriend, Intimidate, Persuade, Lie
+    		Tactical: 
+    			Wait, Prepare, Distract, Camouflage
+    		Construction:
+    			Survey, Build, Repair, Excavate
+    		Resource:
+    			Plant, Tend, Harvest, Tame, Hunt, Fish, Mine, Chop, Gather
+    		Craft:
+    			Forge, Carve, Weave, Tinker, Refine
+    		Consumable:
+    			Bake, Cook, Brew
+    		Daily:
+    			Clean, Organize, Care, Socialize, Teach
+    		Warfare:
+    			Strategize, Scout
+    		Trade:
+    			Haggle, Deliver, Manage
+    		Magic:
+    			Cast, Mix, Enchant, Divine
+    		Culture:
+    			Preform, Write, Study
+    		Explore:
+    			Track, Navigate, Watch
+    		Behavioral:
+    			Observe, Learn, Work, Flee, Hide Item, Prepare, Decide, Plan, Remember, Forget, Desire
+    
+    Stat Influence:
+    	Movement: 
+    		Dexterity, Stamina, Endurance
+    	Combat: 
+    		Strength, Dexterity, Perception, Power
+    	Utility: 
+    		Vitality, Focus, Willpower
+    	Social: 
+    		Conviction, Perception, Willpower
+    	Tactical: 
+    		Insight, Willpower, Perception
+
+    Life Stages & Traits & Trait Evolution:
+
+    	Infant: 1 Temperament Traits
+    	Toddler: 1 Temperament Trait + 1 New Socialization Trait
+    
+    	Child: Temperament trait evolves into Emotional trait + 1 Old Socialization Trait + 1 New Cognition Trait
+    
+    	Teenager: Socialization trait evolves into Interaction trait + 1 Old Emotional Trait + 1 Old Cognition Trait + 1 New Identity Trait
+    
+    	Young Adult: Cognition trait evolves into Ambition trait + 1 Old Emotional Trait + 1 Old Identity Trait + 1 New Moral Trait
+    
+    	Adult: Identity trait evolves into Perspective trait + 1 Old Emotional Trait + 1 Evolved Perspective Trait + 1 Old Moral Trait
+    
+    	Elder: Ambition trait evolves into Legacy trait + 1 Old Emotional Trait + 1 Old Perspective Trait + 1 Old Moral Trait
+
+    Stats & Derived Values:
+    	Base Stats: 
+    		Strength, Stamina, Dexterity, Perception, Willpower
+    	Advanced Stats: 
+    		Endurance, Prowess, Finesse, Conviction, Vitality
+    	Derived Stats:
+    		Health, Mana
+
+    Skills:
+    	Construction: 
+    		Masonry, Carpentry, Earthwork, Design, Engineering
+    	Farming & Gathering: 
+    		Farming, Taming, Fishing, Mining, Logging, Foraging
+    	Crafting: 
+    		Smithing, Glasswork, Tanning, Tailoring, Crafting
+    	Food & Drink: 
+    		Brewing, Baking, Cooking
+    	Combat:
+    		Combat, Marksmanship, Strategy, Spell craft
+    	Trade: 
+    		Trading, Logistics, Accounting
+    	Medicine & Magic: 
+    		Healing, Alchemy, Divination
+    	Culture: 
+    		Performance, Writing, Rune smithing, Curation
+    	Exploration & Security: 
+    		Tracking, Navigation, Vigilance, Charisma
+
+    Needs System:
+    	Hunger
+    	Thirst
+    	Energy
+    	Social
+    	Health
+    	Hygiene
+    	Bladder
+    	Stress
+    	Morale
+    	Motivation
+    	Focus
+    	Enjoyment
+    	Mana
+~Crafting~
+    Creatures have inventories with stackable items.
+    Storage items will be lockable, and when left unlocked creatures will use from freely unless not related, in the same settlement, or negative relationship to owner is present.
