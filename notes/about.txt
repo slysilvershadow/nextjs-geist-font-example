@@ -1,0 +1,88 @@
+
+Using the notes provided Create an in depth 2d top down life survival simulation. 
+Core Features include:
+    Fully simulated AI-driven Characters with emergent autonomy, each one should have its own memories, personality quirks, and daily schedules, without being preprogrammed.
+    Characters should have abilities like mining, chopping trees, combat, crafting, eating, exploring, sleeping, having open ended conversations with each other, building and breaking relationships with other characters, building skills, coordinating amongst themselves, going to war, going to work, geting fired, making money, buying products, stealing, being arrested, teaching each other things, dying, and having offspring. 
+	Generational gameplay and personality evolution across life stages
+	Deterministic, DNA-based genetics system for inheritance and visual sprite generation
+	Custom calendar with 10-day weeks and 300-day years
+	Deep crafting system spanning natural, mundane, and magical recipes
+	Procedural world with evolving ecosystems
+	Advanced AI with needs, stats, skills, and social behaviors
+	Modular and stat-influenced action system
+Please use the notes provided and code the simulation in python make it easy to understand with explainitory comments, the simulation should use pygame, namemaker, networkx, 
+
+Time System:
+	Hour: 
+		60 minutes
+	Day: 
+		24 hours
+	Week: 
+		10 days
+	Month: 
+		30 days
+	Year: 
+		10 months (300 days total)
+	Time of Day:
+		Firstlight (6 AM - 11 AM)
+		Highsun (12 PM - 4 PM)
+		Duskbloom (5 PM - 10 PM)
+		Starveil (11 PM - 5 AM)
+	Months:
+		Brigide (Winter)
+		Imbolka (Late Winter)
+		Floralis (Spring)
+		Lithara (Early Summer)
+		Heliax (Midsummer)
+		Aestium (Late Summer)
+		Mabonel (Autumn)
+		Ceresio (Late Autumn)
+		Yulith (Early Winter)
+		Hibernis (Mid-Winter)
+	Days of the Week:
+		Solthos, Morthos, Blazthos, Fenthos, Cynthos, Calthos, Astrathos, Wispthos, Heliothos, Ethothos
+	
+AI Simulation System:
+	All Characters are fully simulated and possess the same abilities as players. 
+	There are no hardcoded behaviors or static scripts. 
+	The following subsystems govern AI behavior:
+		1. Memory & Personality
+			Characters store long- and short-term memories of events, relationships, places, and decisions.
+			Personality quirks influence how they react to stimuli and others.
+			Memories affect decisions (e.g., betrayals, debts, favors, history with locations).
+		2. Autonomous Behavior & Scheduling
+			Characters manage their own daily routines based on needs, goals, and roles.
+			Schedules adapt dynamically to environmental conditions, clan demands, or relationships.
+			Priorities include survival, socialization, work, recreation, and rest.
+		3. Skills & Progression
+			Skills are learned through use and teaching.
+			Characters can pass on knowledge to others via mentoring, schools, or apprenticeship.
+			Skill decay and generational knowledge loss can occur without active training.
+		4. Open-Ended Social Interaction
+			Characters hold conversations with the player and with each other.
+			Dialogue trees are emergent, context-sensitive, and influenced by personality and memory.
+			Gossip systems spread rumors, news, and social influence.
+		5. Dynamic Relationships
+			Characters form bonds: friends, enemies, lovers, rivals, families.
+			Relationships evolve through shared experiences and time.
+			Jealousy, loyalty, affection, and hatred emerge based on interactions.
+		6. Law, Crime & Justice
+			Characters can commit crimes (theft, assault, vandalism, etc.).
+			Justice systems exist (clan-based or settlement-based): arrest, trial, punishment.
+			Reputation and fear influence whether justice is enforced.
+		7. Commerce & Economy
+			Characters earn, trade, and spend currency.
+			Characters buy products, barter, produce goods, and start businesses.
+			Economic status affects lifestyle, access, and opportunities.
+		8. Politics, War & Diplomacy
+			Characters can form factions and clans can go to war.
+			Diplomacy systems allow alliances, betrayal, negotiations.
+			Leaders emerge based on popularity, strength, lineage, or manipulation.
+		9. Survival & Reproduction
+	    	Characters experience aging, illness, and death.
+			They pursue romantic partners and can have offspring.
+			Inheritance of genetics, traits, and status supports long-term emergent lineage.
+		10. World Impact & Legacy
+			Character actions persist: they build, destroy, change the world.
+			Settlements evolve organically based on Character initiative.
+			Tombs, legends, and history form naturally over generations.
