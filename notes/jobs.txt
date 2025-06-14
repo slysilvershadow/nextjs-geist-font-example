@@ -1,0 +1,52 @@
+> Jobs include:
+	>>🏗️ Construction & Infrastructure
+		Architect: Plans and surveys buildings and infrastructure.
+		Stonemason: Carves and lays stone for structures and roads.
+		Woodworker: Crafts, and constructs buildings with wood.
+		Earthworker: Shapes mud, sand, and clay for construction and utilities.
+		Engineer: Constructs tunnels, roads, and other infrastructure.
+	>>🌾 Farming & Resource Gathering
+		Farmer: Grows crops, manages food production, and tends orchards.
+		Animal Trainer: Tames and manages livestock, mounts, and working animals.
+		Fisherman: Catches and processes fish and other aquatic resources.
+		Miner: Extracts ores, gems, and minerals from the earth.
+		Lumberjack: Harvests trees and processes wood.
+		Forager: Gathers edible plants, mushrooms, herbs, and reeds.
+	>>⚒️ Crafting & Production
+		Blacksmith: Forges metal tools, weapons, and armor.
+		Glassmaker: Creates glass goods from desert sand.
+		Carpenter: Builds boats and wooden equipment.
+		Tanner: Processes hides and crafts leather goods.
+		Artisan: Creates decorative and functional crafts like baskets, pottery, candles, soaps, and other related products.
+		Tailor: Creates clothing and textiles for the community.
+	>>🍞 Food & Drink
+		Brewer: Makes alcoholic and non-alcoholic drinks like beer, wine, and juices.
+		Baker: Bakes bread, pastries, and other goods.
+		Chef: Prepares complex meals for individuals or groups.
+	>>🛡️ Defense & Warfare
+		Soldier: Engages in combat, defense, and tactical operations.
+		Scout: Explores, tracks, and serves as an early warning system.
+		Commander: Leads troops, strategizes, and organizes defenses.
+		Battle Mage: Specializes in using destructive or protective spells in combat.
+	>>🛒 Trade & Communication
+		Merchant: Sells goods within the settlement.
+		Trader: Facilitates trade, moving goods between settlements.
+		Diplomat: Negotiates alliances, peace, and trade agreements.
+		Courier: Delivers messages and goods across distances.
+		Treasurer: Manages and oversees the community’s wealth and resources.
+	>>🧑‍⚕️ Medicine & Magic
+		Healer: Uses medical and magical knowledge to treat injuries and diseases.
+		Alchemist: Mixes potions, poisons, and magical concoctions for various effects, including medicine.
+		Medic Aide: Supports healers with medical treatments and basic care.
+		Shaman: Uses spiritual and magical healing methods, guides rituals, and connects with the spirit world.
+	>>🎭 Arts & Culture
+		Bard: Performs music, poetry, and storytelling to entertain and uplift.
+		Performer: Engages in theatrical performances, dances, and live shows.
+		Scholar: Studies and preserves knowledge, researching various disciplines.
+		Librarian/Scribe: Organizes and records knowledge, creates written records for future generations.
+		Diviner: Uses magic or spiritual practices to foresee the future or gain insight.
+		Runesmith: Crafts magical symbols and runes for enchantments and spells.
+	>>🌍 Exploration & Defense
+		Hunter: Tracks and hunts animals for food and materials.
+		Sailor/Navigator: Manages ocean travel and shipbuilding.
+		Watchman: Monitors surroundings, provides security, and gathers intelligence.
